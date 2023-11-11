@@ -9,13 +9,35 @@ const passwordSchema = Yup.object().shape({
   .required('Length is required')
 })
 export default function App() {
-  const[password,setPassword] = useState("")
+  const[password,setPassword] = useState('')
 const[ispassgenerated,setIspassgenerated] = useState(false)
 const[lowerCase,setLowerCase] = useState(true)
 const[upperCase,setUppercase] = useState(false)
-const[numbers,useNumbers]= useState(false)
-const[symbols,useSymbols] = useState(false)
+const[numbers,setNumbers]= useState(false)
+const[symbols,setSymbols] = useState(false)
 const generatepasswordString = (passwordLength : number) =>{
+let characterList = '';
+const upperCase = 'A B C D E F G H I J K L M N O P Q R S T U V W X Y Z';
+const lowerCase = 'a b c d e f g h i j k l m n o p q r s t u v w x y z';
+const digitalchar = '1234567890';
+const specialChar = '!@#$%^&*()_+';
+if(upperCase){
+  characterList += upperCase
+}
+if(lowerCase){
+  characterList += lowerCase
+}
+if(digitalchar){
+  characterList += digitalchar
+}
+if(specialChar){
+  characterList += specialChar
+}
+const passwordResult = createPassword(characterList,passwordLength)
+
+setPassword(passwordResult)
+setIspassgenerated(true)
+
 
 }
 const createPassword = (characters:string,passwordLength:number)=>{
