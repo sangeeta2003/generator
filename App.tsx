@@ -19,7 +19,11 @@ const generatepasswordString = (passwordLength : number) =>{
 
 }
 const createPassword = (characters:string,passwordLength:number)=>{
-
+let result = ""
+for(let i=0;i < passwordLength ; i++){
+const charcterIndex = Math.round(Math.random() *characters.length )
+result += characters.charAt(charcterIndex)
+}
 }
 const resetPasswordstate = ()=>{
 
