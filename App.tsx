@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 
 const passwordSchema = Yup.object().shape({
   passwordLength:Yup.number()
-  .min(4,'should be min of 4 charcters')
+  .min(4,'should be min  of 4 charcters')
   .max(16,'should be max of 16 characters')
   .required('Length is required')
 })
