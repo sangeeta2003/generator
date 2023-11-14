@@ -1,6 +1,11 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text, View,ScrollView, SafeAreaView } from 'react-native'
 import React,{useState} from 'react';
+import BouncyCheckbox from 'react-native-bouncy-checkbox';
+
+// ... rest of your code
+
 import * as Yup from 'yup';
+import {Formik} from 'formik';
 
 const passwordSchema = Yup.object().shape({
   passwordLength:Yup.number()
@@ -54,10 +59,21 @@ const resetPasswordstate = ()=>{
 
 
   return (
-    <View>
-      <Text>App</Text>
-    </View>
+   <ScrollView keyboardShouldPersistTaps="handled">
+<SafeAreaView style={styles.appcontainer}>
+<View style={styles.formcontainer}>
+
+</View>
+</SafeAreaView>
+   </ScrollView>
   )
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  appcontainer:{
+
+  },
+  formcontainer:{
+
+  }
+})
